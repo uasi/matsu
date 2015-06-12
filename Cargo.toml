@@ -1,0 +1,4 @@
+[package]
+name = "matsu"
+version = "0.1.0"
+authors = ["Tomoki Aonuma <uasi@uasi.jp>"]
