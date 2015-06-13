@@ -25,12 +25,10 @@ impl AttributedString {
     /// - Panics if `range.end` is greater than `range.start`.
     /// - Panics if `range` does not lie on character boundary of the underlying string.
     pub fn add_attr(&mut self, attr: Attribute, range: Range<usize>) {
-        if range.start > range.end {
-            panic!("reverse range not allowed");
-        }
-        if !byte_range_lies_on_char_boundary(&range, &self.string) {
-            panic!("range {:?} in `{:?}` does not lie on character boundary", range, &self.string);
-        }
+        assert!(range.start <= range.end,
+            "reverse range not allowed");
+        assert!(byte_range_lies_on_char_boundary(&range, &self.string),
+            "range {:?} in `{:?}` does not lie on character boundary", range, &self.string);
         if range.start == range.end {
             return;
         }
