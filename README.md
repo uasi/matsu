@@ -1,4 +1,4 @@
-# Matsu
+# Matsu [![Build Status](https://travis-ci.org/uasi/matsu.svg?branch=master)](https://travis-ci.org/uasi/matsu)
 
 This module provides an attributed string suitable for printing formatted
 characters on a text terminal.
